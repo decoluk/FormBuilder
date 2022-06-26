@@ -36,7 +36,7 @@ namespace WebFormBuiler.Controllers
         {
             string pXML = "";
             pXML = ConfigurationLib.XMLLib.XmlSerialize<mfbEntity>(obj);
-            var result = models.SetEntity(pXML);
+            var result = models.SetEntity("ADD",pXML);
             return RedirectToAction("Index");
         }
 

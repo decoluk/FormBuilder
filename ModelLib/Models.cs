@@ -38,13 +38,13 @@ namespace ModelLib
 
 
         #region Entity
-        public bool SetEntity(string pXML)
+        public bool SetEntity(string pACTION,string pXML)
         {
             try
             {
                 CreateNewSqlCommand(StoredProcedures.spaExecuteSP);
                 AddSqlCmdParameter("SQL_STORED_PROCEDURE", "spaEntity");
-                AddSqlCmdParameter("TYPE", "ADD");
+                AddSqlCmdParameter("TYPE", pACTION);
                 AddSqlCmdParameter("DATA", pXML);
                 string ResultXML = ExecuteNonQuery();
                 if (DataConvertLib.Instance.GetXMLElementValue(ResultXML, "RESULT") == "SUCCESS")
@@ -61,6 +61,7 @@ namespace ModelLib
                 return false;
             }
         }
+
         public bool GetEntity(ref mfbEntityViewModel pList)
         {
             try
