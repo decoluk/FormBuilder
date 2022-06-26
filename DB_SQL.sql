@@ -1,16 +1,97 @@
- 
+USE [master]
+GO
+/****** Object:  Database [GenericFormBuilder]    Script Date: 2022/6/27 上午 12:27:33 ******/
 CREATE DATABASE [GenericFormBuilder]
- 
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'GenericFormBuilder', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\GenericFormBuilder.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'GenericFormBuilder_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\GenericFormBuilder_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [GenericFormBuilder] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [GenericFormBuilder].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [GenericFormBuilder] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [GenericFormBuilder] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [GenericFormBuilder] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [GenericFormBuilder] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [GenericFormBuilder] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [GenericFormBuilder] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [GenericFormBuilder] SET  MULTI_USER 
+GO
+ALTER DATABASE [GenericFormBuilder] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [GenericFormBuilder] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [GenericFormBuilder] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [GenericFormBuilder] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [GenericFormBuilder] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [GenericFormBuilder] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [GenericFormBuilder] SET QUERY_STORE = OFF
+GO
 USE [GenericFormBuilder]
 GO
- 
+/****** Object:  Table [dbo].[eLog]    Script Date: 2022/6/27 上午 12:27:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE TABLE [dbo].[eLog](
 	[lg_id] [bigint] IDENTITY(1,1) NOT NULL,
 	[lg_date] [datetime] NOT NULL,
 	[lg_data] [xml] NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[mfbEntity]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  Table [dbo].[mfbEntity]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -28,7 +109,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[mfbEntityColumn]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  Table [dbo].[mfbEntityColumn]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -53,7 +134,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[mfbFieldType]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  Table [dbo].[mfbFieldType]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -70,7 +151,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[mfbListView]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  Table [dbo].[mfbListView]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -85,7 +166,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[mfbListViewItem]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  Table [dbo].[mfbListViewItem]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,7 +188,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[mFormBuilder]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  Table [dbo].[mFormBuilder]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,7 +202,7 @@ CREATE TABLE [dbo].[mFormBuilder](
 	[fb_is_auto_gen] [datetime] NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[mSeqNo]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  Table [dbo].[mSeqNo]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -186,7 +267,7 @@ ALTER TABLE [dbo].[mSeqNo] ADD  DEFAULT ((0)) FOR [sq_num]
 GO
 ALTER TABLE [dbo].[mSeqNo] ADD  DEFAULT (getdate()) FOR [sq_date]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_SQLCommandGen]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  StoredProcedure [dbo].[sp_SQLCommandGen]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -374,7 +455,7 @@ END
 
                                                       
 GO
-/****** Object:  StoredProcedure [dbo].[spaEntity]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  StoredProcedure [dbo].[spaEntity]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -388,13 +469,26 @@ CREATE PROCEDURE [dbo].[spaEntity]
 )AS
 /*
 DECLARE @pRtnXML XML
-EXEC spaDataSyncImportToClient 
+EXEC spaEntity 
  '<ROOT>
-			<coCode>801</coCode>
-			<usCode>8</usCode>
-			<TYPE>IMPORT</TYPE>
-			<dsicCode>63245</dsicCode>
-	</ROOT>',@pRtnXML OUTPUT
+  <SQL_STORED_PROCEDURE>spaEntity</SQL_STORED_PROCEDURE>
+  <TYPE>ADD</TYPE>
+  <DATA>
+    <mfbEntity_COLLECTION>
+      <fbe_id>0</fbe_id>
+      <fbe_name>dd</fbe_name>
+      <fbe_mapping_db>d</fbe_mapping_db>
+      <fbe_mapping_table>dd</fbe_mapping_table>
+      <fbe_desc>dd</fbe_desc>
+    </mfbEntity_COLLECTION>
+  </DATA>
+  <coCode>0</coCode>
+  <usCode />
+  <nlCode />
+  <shpCode />
+  <cmCode />
+  <SYSTEM_DB_CONNECTION_TYPE>FORM_BUILDER</SYSTEM_DB_CONNECTION_TYPE>
+</ROOT>',@pRtnXML OUTPUT
 SELECT @pRtnXML
 */
 BEGIN
@@ -402,11 +496,19 @@ BEGIN
 	DECLARE @SQL_STORED_PROCEDURE NVARCHAR(50)
 	DECLARE @co_id			BIGINT
 	DECLARE @us_id			BIGINT
-	
+	DECLARE @RtnKey	BIGINT
+
 	DECLARE @RtnRESULT		NVARCHAR(20)
 	DECLARE @VIEWRESULT		XML
 	SET @RtnRESULT = 'FAIL'
 	
+	DECLARE @fbe_id BIGINT
+	DECLARE @fbe_name NVARCHAR(100)
+	DECLARE @fbe_mapping_db NVARCHAR(100)
+	DECLARE @fbe_mapping_table NVARCHAR(100)
+	DECLARE @fbe_desc NVARCHAR(MAX)
+	DECLARE @fbe_date DATETIME
+
 	SELECT 
 		@TYPE			= T.C.value('TYPE[1]', 'NVARCHAR(100)'),
 		@SQL_STORED_PROCEDURE = T.C.value('SQL_STORED_PROCEDURE[1]', 'NVARCHAR(100)'),
@@ -419,15 +521,37 @@ BEGIN
 		BEGIN
 			SET @RtnRESULT = 'SUCCESS'
 		END
-		ELSE IF (@TYPE = 'GET_PRODUCT')		
+		ELSE IF (@TYPE = 'ADD')		
 		BEGIN
-			--SET @VIEWRESULT = (SELECT *,
-			--		(SELECT * FROM POS_RetailPrice c2 WHERE c1.pt_code = c2.pt_code FOR XML PATH('POS_RetailPrice'),TYPE) ,
-			--		(SELECT * FROM POS_SpecialProduct c3 WHERE c1.pt_code = c3.pt_code FOR XML PATH('POS_SpecialProduct'),TYPE) 
-			--	 FROM POS_ProductUPC c1 FOR XML PATH('POS_ProductUPC'), ROOT('POS_ProductUPC_COLLECTION'))
+			SELECT
+				@fbe_name  = ISNULL(T.C.value('fbe_name[1]', 'NVARCHAR(200)'),''),
+				@fbe_mapping_db  = ISNULL(T.C.value('fbe_mapping_db[1]', 'NVARCHAR(200)'),''),
+				@fbe_mapping_table  = ISNULL(T.C.value('fbe_mapping_table[1]', 'NVARCHAR(200)'),''),
+				@fbe_desc  = T.C.value('fbe_desc[1]', 'NVARCHAR(MAX)')
+			FROM @pXML.nodes('/ROOT/DATA/mfbEntity_COLLECTION') T(C)
+
+			EXEC spaSeqNo 1,'mfbEntity',@fbe_id OUTPUT
+			INSERT INTO mfbEntity(fbe_id,fbe_name,fbe_mapping_db,fbe_mapping_table,fbe_desc)
+			VALUES (@fbe_id,@fbe_name,@fbe_mapping_db,@fbe_mapping_table,@fbe_desc)
+			SET @RtnRESULT = 'SUCCESS'
+		END 
+		ELSE IF (@TYPE = 'UPDATE')		
+		BEGIN
 			SET @RtnRESULT = 'SUCCESS'		
 		END
-		
+		ELSE IF (@TYPE ='GET_ENTITY_LIST')
+		BEGIN
+			SET @VIEWRESULT = (SELECT * 
+				 FROM mfbEntity c1 FOR XML PATH('mfbEntity_ITEM'), ROOT('mfbEntity_COLLECTION'))
+			SET @RtnRESULT = 'SUCCESS'		
+		END
+		ELSE IF (@TYPE ='GET_ENTITY_WITH_ITEM_LIST')
+		BEGIN
+			SET @VIEWRESULT = (SELECT * ,
+				 (SELECT * FROM mfbEntityColumn c2 WHERE c1.fbe_id = c2.fbe_id FOR XML PATH('mfbEntityColumn_ITEM'),TYPE) 
+				 FROM mfbEntity c1 FOR XML PATH('mfbEntity_ITEM'), ROOT('mfbEntity_COLLECTION'))
+			SET @RtnRESULT = 'SUCCESS'		
+		END
 		SET @pRtnXML = (
 			SELECT 
 			@RtnRESULT	AS RESULT,
@@ -456,7 +580,7 @@ END
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[spaExecuteSP]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  StoredProcedure [dbo].[spaExecuteSP]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -525,7 +649,7 @@ END
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[spaFormBuilder]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  StoredProcedure [dbo].[spaFormBuilder]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -607,7 +731,7 @@ END
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[spaPermission]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  StoredProcedure [dbo].[spaPermission]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -670,7 +794,7 @@ END
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[spaSeqNo]    Script Date: 2022/6/26 下午 08:43:11 ******/
+/****** Object:  StoredProcedure [dbo].[spaSeqNo]    Script Date: 2022/6/27 上午 12:27:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

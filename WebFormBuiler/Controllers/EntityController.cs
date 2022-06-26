@@ -30,6 +30,16 @@ namespace WebFormBuiler.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(mfbEntity obj)
+        {
+            string pXML = "";
+            pXML = ConfigurationLib.XMLLib.XmlSerialize<mfbEntity>(obj);
+            var result = models.SetEntity(pXML);
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Privacy()
         {
             return View();
