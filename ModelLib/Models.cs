@@ -92,6 +92,38 @@ namespace ModelLib
                 return false;
             }
         }
+
+        public bool GetEntityList(ref mfbEntity_Collection pList)
+        {
+            try
+            {
+                string pXML = "";
+                CreateNewSqlCommand(StoredProcedures.spaExecuteSP);
+                AddSqlCmdParameter("SQL_STORED_PROCEDURE", "spaEntity");
+                AddSqlCmdParameter("TYPE", "GET_ENTITY_LIST");
+
+                string ResultXML = ExecuteNonQuery();
+                if (DataConvertLib.Instance.GetXMLElementValue(ResultXML, "RESULT") == "SUCCESS")
+                {
+                    pList = new mfbEntity_Collection();
+                    pXML = DataConvertLib.Instance.GetXMLElementValue(ResultXML, "VIEWRESULT");
+                    if (!string.IsNullOrEmpty(pXML))
+                    {
+                        XmlSerializer serializer = new XmlSerializer(typeof(mfbEntity_Collection));
+                        pList = (mfbEntity_Collection)serializer.Deserialize(new StringReader(pXML));
+                    }
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         #endregion
 
     }

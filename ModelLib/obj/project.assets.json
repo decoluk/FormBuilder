@@ -2749,11 +2749,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\c#\\WebFormBuiler\\WebFormBuiler\\ModelLib\\ModelLib.csproj",
+      "projectUniqueName": "D:\\Projects\\FormBuilder\\FormBuilder\\ModelLib\\ModelLib.csproj",
       "projectName": "ModelLib",
-      "projectPath": "D:\\c#\\WebFormBuiler\\WebFormBuiler\\ModelLib\\ModelLib.csproj",
+      "projectPath": "D:\\Projects\\FormBuilder\\FormBuilder\\ModelLib\\ModelLib.csproj",
       "packagesPath": "C:\\Users\\decoluk\\.nuget\\packages\\",
-      "outputPath": "D:\\c#\\WebFormBuiler\\WebFormBuiler\\ModelLib\\obj\\",
+      "outputPath": "D:\\Projects\\FormBuilder\\FormBuilder\\ModelLib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -2776,11 +2776,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\c#\\WebFormBuiler\\WebFormBuiler\\ConfigurationLib\\ConfigurationLib.csproj": {
-              "projectPath": "D:\\c#\\WebFormBuiler\\WebFormBuiler\\ConfigurationLib\\ConfigurationLib.csproj"
+            "D:\\Projects\\FormBuilder\\FormBuilder\\ConfigurationLib\\ConfigurationLib.csproj": {
+              "projectPath": "D:\\Projects\\FormBuilder\\FormBuilder\\ConfigurationLib\\ConfigurationLib.csproj"
             },
-            "D:\\c#\\WebFormBuiler\\WebFormBuiler\\DALLib\\DALLib.csproj": {
-              "projectPath": "D:\\c#\\WebFormBuiler\\WebFormBuiler\\DALLib\\DALLib.csproj"
+            "D:\\Projects\\FormBuilder\\FormBuilder\\DALLib\\DALLib.csproj": {
+              "projectPath": "D:\\Projects\\FormBuilder\\FormBuilder\\DALLib\\DALLib.csproj"
             }
           }
         }

@@ -3,6 +3,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using System.ComponentModel;
 
 namespace ModelLib
 {
@@ -10,10 +11,14 @@ namespace ModelLib
     public class mfbEntity
     {
         public int fbe_id;
-        public string fbe_name;
-        public string fbe_mapping_db;
-        public string fbe_mapping_table;
-        public string fbe_desc;
+        [DisplayName("Name")]
+        public string fbe_name { get; set; }
+        [DisplayName("DB Name")]
+        public string fbe_mapping_db { get; set; }
+        [DisplayName("Table Name")]
+        public string fbe_mapping_table { get; set; }
+        [DisplayName("Description")]
+        public string fbe_desc{ get; set; }
         public DateTime? fbe_date;
     }
 

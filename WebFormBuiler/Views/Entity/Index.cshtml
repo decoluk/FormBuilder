@@ -1,0 +1,42 @@
+﻿@model ModelLib.mfbEntity_Collection
+@{
+    ViewData["Title"] = "Entity";
+}
+
+<div class="text-center">
+    <div class="row pt-4">
+        <div class="col-6">
+           <h1 class="row pt-4">Entity</h1>
+       </div>
+       <div class="col-6">
+           <a asp-controller="Entity" asp-action="Create" class="btn btn-primary">
+               <i class="bi bi-plus-circle"></i> Create New Entity
+           </a>
+       </div>
+    </div>
+    <div>
+   <table class="table table-boardered table-striped" style="width:100%">
+       <thread>
+           <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>DB</th>
+               <th>DB Table</th>
+               <th>Description</th>
+               <th>Last updated date</th>
+           </tr>
+       </thread>
+       <tbody>
+           @foreach(var obj in Model.tbl_mfbEntity)
+            {
+                <tr><td width="10%">@obj.fbe_id</td>
+                <td width="10%">@obj.fbe_name</td>
+                <td width="10%">@obj.fbe_mapping_db</td>
+                <td width="10%">@obj.fbe_mapping_table</td>
+                <td width="50%">@obj.fbe_desc</td>
+                <td width="10%">@obj.fbe_date</td></tr>
+            }
+        </tbody>
+   </table>
+   </div>
+</div>

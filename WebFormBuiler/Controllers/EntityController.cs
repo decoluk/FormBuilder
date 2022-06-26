@@ -7,12 +7,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace WebFormBuiler.Controllers
 {
-    public class HomeController : Controller
+    public class EntityController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         public ModelLib.Models models = new ModelLib.Models();
-         
-        public HomeController(ILogger<HomeController> logger)
+
+        public EntityController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
@@ -20,8 +20,13 @@ namespace WebFormBuiler.Controllers
         public IActionResult Index()
         {
             mfbEntity_Collection pList = new mfbEntity_Collection();
-            var result = models.GetEntityList(ref  pList);
+            var result = models.GetEntityList(ref pList);
 
+            return View(pList);
+        }
+
+        public IActionResult Create()
+        {
             return View();
         }
 

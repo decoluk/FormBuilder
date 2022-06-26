@@ -10,3 +10,15 @@ D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\Configuratio
 D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\refint\ConfigurationLib.dll
 D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.pdb
 D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ref\ConfigurationLib.dll
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\bin\Debug\net6.0\ConfigurationLib.deps.json
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\bin\Debug\net6.0\ConfigurationLib.dll
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\bin\Debug\net6.0\ConfigurationLib.pdb
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.csproj.AssemblyReference.cache
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.AssemblyInfoInputs.cache
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.AssemblyInfo.cs
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.csproj.CoreCompileInputs.cache
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.dll
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\refint\ConfigurationLib.dll
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.pdb
+D:\Projects\FormBuilder\FormBuilder\ConfigurationLib\obj\Debug\net6.0\ref\ConfigurationLib.dll

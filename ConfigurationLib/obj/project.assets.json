@@ -167,11 +167,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\c#\\WebFormBuiler\\WebFormBuiler\\ConfigurationLib\\ConfigurationLib.csproj",
+      "projectUniqueName": "D:\\Projects\\FormBuilder\\FormBuilder\\ConfigurationLib\\ConfigurationLib.csproj",
       "projectName": "ConfigurationLib",
-      "projectPath": "D:\\c#\\WebFormBuiler\\WebFormBuiler\\ConfigurationLib\\ConfigurationLib.csproj",
+      "projectPath": "D:\\Projects\\FormBuilder\\FormBuilder\\ConfigurationLib\\ConfigurationLib.csproj",
       "packagesPath": "C:\\Users\\decoluk\\.nuget\\packages\\",
-      "outputPath": "D:\\c#\\WebFormBuiler\\WebFormBuiler\\ConfigurationLib\\obj\\",
+      "outputPath": "D:\\Projects\\FormBuilder\\FormBuilder\\ConfigurationLib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
