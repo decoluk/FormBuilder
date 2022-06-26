@@ -1,0 +1,12 @@
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\bin\Debug\net6.0\ConfigurationLib.deps.json
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\bin\Debug\net6.0\ConfigurationLib.dll
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\bin\Debug\net6.0\ConfigurationLib.pdb
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.csproj.AssemblyReference.cache
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.AssemblyInfoInputs.cache
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.AssemblyInfo.cs
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.csproj.CoreCompileInputs.cache
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.dll
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\refint\ConfigurationLib.dll
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ConfigurationLib.pdb
+D:\c#\WebFormBuiler\WebFormBuiler\ConfigurationLib\obj\Debug\net6.0\ref\ConfigurationLib.dll

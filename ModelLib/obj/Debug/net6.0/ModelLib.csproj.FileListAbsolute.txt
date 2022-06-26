@@ -1,0 +1,17 @@
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\bin\Debug\net6.0\ModelLib.deps.json
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\bin\Debug\net6.0\ModelLib.dll
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\bin\Debug\net6.0\ModelLib.pdb
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\bin\Debug\net6.0\ConfigurationLib.dll
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\bin\Debug\net6.0\DALLib.dll
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\bin\Debug\net6.0\ConfigurationLib.pdb
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\bin\Debug\net6.0\DALLib.pdb
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ModelLib.csproj.AssemblyReference.cache
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ModelLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ModelLib.AssemblyInfoInputs.cache
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ModelLib.AssemblyInfo.cs
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ModelLib.csproj.CoreCompileInputs.cache
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ModelLib.csproj.CopyComplete
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ModelLib.dll
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\refint\ModelLib.dll
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ModelLib.pdb
+D:\c#\WebFormBuiler\WebFormBuiler\ModelLib\obj\Debug\net6.0\ref\ModelLib.dll
