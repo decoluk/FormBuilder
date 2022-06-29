@@ -1,0 +1,38 @@
+﻿@model ModelLib.mfbProject_Collection
+@{
+    ViewData["Title"] = "Project";
+}
+
+<div class="text-center">
+    <div class="row pt-4">
+        <div class="col-6">
+           <h1 class="row pt-4">Projects</h1>
+       </div>
+       <div class="col-6">
+           <a asp-controller="Project" asp-action="Create" class="btn btn-primary">
+               <i class="bi bi-plus-circle"></i> Create New Project
+           </a>
+       </div>
+    </div>
+    <div>
+   <table class="table table-boardered table-striped" style="width:100%">
+       <thread>
+           <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>DB</th>
+               <th>IP</th>
+           </tr>
+       </thread>
+       <tbody>
+           @foreach(var obj in Model.tbl_mfbProject)
+            {
+                <tr><td width="10%">@obj.fbp_id</td>
+                <td width="10%">@obj.fbp_name</td>
+                <td width="10%">@obj.fbp_db</td>
+                <td width="10%">@obj.fbp_ip</td></tr>
+            }
+        </tbody>
+   </table>
+   </div>
+</div>

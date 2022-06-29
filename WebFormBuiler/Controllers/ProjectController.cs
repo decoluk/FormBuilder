@@ -7,20 +7,20 @@ using Microsoft.Extensions.Configuration;
 
 namespace WebFormBuiler.Controllers
 {
-    public class EntityController : Controller
+    public class ProjectController : Controller
     {
-        private readonly ILogger<EntityController> _logger;
+        private readonly ILogger<ProjectController> _logger;
         public ModelLib.Models models = new ModelLib.Models();
 
-        public EntityController(ILogger<EntityController> logger)
+        public ProjectController(ILogger<ProjectController> logger)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            mfbEntity_Collection pList = new mfbEntity_Collection();
-            var result = models.GetEntityList(ref pList);
+            mfbProject_Collection pList = new mfbProject_Collection();
+            var result = models.GetProjectList(ref pList);
 
             return View(pList);
         }
@@ -32,11 +32,11 @@ namespace WebFormBuiler.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(mfbEntity obj)
+        public IActionResult Create(mfbProject obj)
         {
             string pXML = "";
-            pXML = ConfigurationLib.XMLLib.XmlSerialize<mfbEntity>(obj);
-            var result = models.SetEntity("ADD",pXML);
+            pXML = ConfigurationLib.XMLLib.XmlSerialize<mfbProject>(obj);
+            var result = models.SetProject("ADD", pXML);
             return RedirectToAction("Index");
         }
 

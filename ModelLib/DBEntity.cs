@@ -7,10 +7,23 @@ using System.ComponentModel;
 
 namespace ModelLib
 {
+    [XmlRoot("mfbProject_COLLECTION")]
+    public class mfbProject
+    {
+        public int? fbp_id { get; set; }
+        [DisplayName("Name")]
+        public string fbp_name { get; set; }
+        [DisplayName("DB")]
+        public string fbp_db { get; set; }
+        [DisplayName("IP")]
+        public string fbp_ip { get; set; }
+    }
+
     [XmlRoot("mfbEntity_COLLECTION")]
     public class mfbEntity
     {
         public int fbe_id;
+        public int fbp_id;
         [DisplayName("Name")]
         public string fbe_name { get; set; }
         [DisplayName("DB Name")]
@@ -54,6 +67,7 @@ namespace ModelLib
     public class mfbListView
     {
         public int fblv_id;
+        public int fbp_id;
         public string fblv_name;
         public DateTime? fblv_date;
     }
@@ -77,6 +91,7 @@ namespace ModelLib
     public class mFormBuilder
     {
         public int fb_id;
+        public int fbp_id;
         public string fb_name;
         public string fb_key;
         public DateTime? fb_date;

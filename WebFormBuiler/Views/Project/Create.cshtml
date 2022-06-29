@@ -1,0 +1,30 @@
+﻿@model ModelLib.mfbProject
+@{
+    ViewData["Title"] = "Entity";
+}
+
+<div class="text-center">
+    <div class="row pt-4">
+        <div class="col-6">
+           <h1 class="row pt-4">Create Entity</h1>
+       </div>
+       <div class="col-6">
+      
+       </div>
+    </div>
+    <form method="post">
+    <div class="mb-3">
+        <label asp-for="fbp_name"></label>
+        <input asp-for="fbp_name" class="form-control"/>
+   </div>
+    <div class="mb-3">
+        <label asp-for="fbp_db"></label>
+        <input asp-for="fbp_db" class="form-control"/>
+   </div>
+    <div class="mb-3">
+        <label asp-for="fbp_ip"></label>
+        <input asp-for="fbp_ip" class="form-control"/>
+   </div>
+   <button type="submit" class="btn btn-primary" sytle="width:150px;">Create</button>
+   </form>
+</div>

@@ -218,7 +218,14 @@ namespace ConfigurationLib
                 XmlDocument doc = new XmlDocument();
                 doc.Load(new XmlTextReader(new StringReader(pXML)));
                 XmlNodeList elemList = doc.GetElementsByTagName(pKey);
-                return elemList[0].InnerXml;
+                if (elemList.Count != 0)
+                {
+                    return elemList[0].InnerXml;
+                }
+                else
+                {
+                    return "";
+                }
             }
             catch
             {

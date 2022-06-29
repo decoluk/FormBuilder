@@ -37,6 +37,66 @@ namespace ModelLib
         }
 
 
+        #region Project
+
+        public bool SetProject(string pACTION, string pXML)
+        {
+            try
+            {
+                CreateNewSqlCommand(StoredProcedures.spaExecuteSP);
+                AddSqlCmdParameter("SQL_STORED_PROCEDURE", "spaProject");
+                AddSqlCmdParameter("TYPE", pACTION);
+                AddSqlCmdParameter("DATA", pXML);
+                string ResultXML = ExecuteNonQuery();
+                if (DataConvertLib.Instance.GetXMLElementValue(ResultXML, "RESULT") == "SUCCESS")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool GetProjectList(ref mfbProject_Collection pList)
+        {
+            try
+            {
+                string pXML = "";
+                CreateNewSqlCommand(StoredProcedures.spaExecuteSP);
+                AddSqlCmdParameter("SQL_STORED_PROCEDURE", "spaProject");
+                AddSqlCmdParameter("TYPE", "GET_PROJECT_LIST");
+
+                string ResultXML = ExecuteNonQuery();
+                if (DataConvertLib.Instance.GetXMLElementValue(ResultXML, "RESULT") == "SUCCESS")
+                {
+                    pList = new mfbProject_Collection();
+                    pXML = DataConvertLib.Instance.GetXMLElementValue(ResultXML, "VIEWRESULT");
+                    if (!string.IsNullOrEmpty(pXML))
+                    {
+                        XmlSerializer serializer = new XmlSerializer(typeof(mfbProject_Collection));
+                        pList = (mfbProject_Collection)serializer.Deserialize(new StringReader(pXML));
+                    }
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
         #region Entity
         public bool SetEntity(string pACTION,string pXML)
         {
@@ -62,13 +122,14 @@ namespace ModelLib
             }
         }
 
-        public bool GetEntity(ref mfbEntityViewModel pList)
+        public bool GetEntity(string fbe_id ,ref mfbEntityViewModel pList)
         {
             try
             {
                 string pXML = "";
                 CreateNewSqlCommand(StoredProcedures.spaExecuteSP);
                 AddSqlCmdParameter("SQL_STORED_PROCEDURE", "spaEntity");
+                AddSqlCmdParameter("fbe_id", fbe_id);
                 AddSqlCmdParameter("TYPE", "GET_ENTITY");
 
                 string ResultXML = ExecuteNonQuery();
@@ -131,6 +192,13 @@ namespace ModelLib
 
     #region ViewModels
 
+    public class CustomViewModel
+    {
+        public mfbEntityViewModel EntityMaster { get; set; }
+
+    }
+
+
     public class mfbEntityViewModel
     {
         public mfbEntity _mfbEntity { get; set; }
@@ -150,6 +218,14 @@ namespace ModelLib
         [XmlElement("mfbEntityColumn_ITEM")]
         public List<mfbEntityColumn> tbl_mfbEntityColumn = new List<mfbEntityColumn>();
     }
+
+    [XmlRoot("mfbProject_COLLECTION")]
+    public class mfbProject_Collection
+    {
+        [XmlElement("mfbProject_ITEM")]
+        public List<mfbProject> tbl_mfbProject = new List<mfbProject>();
+    }
+
 
     #endregion
 }
